@@ -18,23 +18,33 @@
   --radius-md: 0.9rem;
   --radius-pill: 999px;
 
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
 
   --transition-fast: 160ms ease-out;
   --transition-med: 220ms ease-out;
 }
 
 body.dark-theme {
-  --color-bg: #f9fafb;
-  --color-bg-elevated: #ffffff;
-  --color-surface: #f3f4f6;
-  --color-border-subtle: rgba(148, 163, 184, 0.35);
-  --color-text: #020617;
-  --color-text-muted: #4b5563;
-  --color-accent: #0ea5e9;
-  --color-accent-soft: rgba(14, 165, 233, 0.12);
-  --color-accent-strong: #0284c7;
+  /* Day / light theme — warm, aesthetic light-brown palette */
+  --color-bg: #f6efe3; /* warm parchment */
+  --color-bg-elevated: #fffaf5; /* elevated cards */
+  --color-surface: #f1e6da; /* subtle surface tone */
+  --color-border-subtle: rgba(110, 88, 70, 0.12);
+  --color-text: #0f172a; /* neutral deep text for readability */
+  --color-text-muted: #6b6b6b; /* muted gray for secondary text */
+  --color-accent: #b76e41; /* terracotta accent */
+  --color-accent-soft: rgba(183, 110, 65, 0.10);
+  --color-accent-strong: #9a5b2f;
+}
+
+/* Tweak the decorative background overlay for the light theme */
+body.dark-theme::before {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(183,110,65,0.12), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(199,160,110,0.10), transparent 55%);
+  mix-blend-mode: multiply;
+  opacity: 0.95;
 }
 
 *,
@@ -81,6 +91,94 @@ body::before {
   }
   100% {
     transform: translate3d(-24px, 18px, 0) scale(1.02);
+  }
+}
+
+/* Bubble Background */
+.bubble-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.9), rgba(56, 189, 248, 0.12));
+  filter: blur(26px);
+  opacity: 0.9;
+  will-change: transform;
+  animation: simpleBounce 6s infinite ease-in-out;
+}
+
+.bubble-1 {
+  width: 220px;
+  height: 220px;
+  top: -60px;
+  left: 4%;
+  animation-duration: 5s;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.95), rgba(56, 189, 248, 0.12));
+}
+
+.bubble-2 {
+  width: 160px;
+  height: 160px;
+  top: 55%;
+  right: 6%;
+  animation-duration: 7s;
+  background: radial-gradient(circle at 30% 30%, rgba(244, 114, 182, 0.9), rgba(244, 114, 182, 0.12));
+}
+
+.bubble-3 {
+  width: 180px;
+  height: 180px;
+  top: 22%;
+  right: 14%;
+  animation-duration: 6.5s;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.85), rgba(56, 189, 248, 0.12));
+}
+
+.bubble-4 {
+  width: 140px;
+  height: 140px;
+  bottom: 12%;
+  left: 16%;
+  animation-duration: 5.5s;
+  background: radial-gradient(circle at 30% 30%, rgba(244, 114, 182, 0.8), rgba(244, 114, 182, 0.12));
+}
+
+.bubble-5 {
+  width: 200px;
+  height: 200px;
+  bottom: -40px;
+  right: 12%;
+  animation-duration: 7.5s;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.9), rgba(56, 189, 248, 0.12));
+}
+
+@keyframes simpleBounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -30px);
+  }
+  50% {
+    transform: translate(-20px, -50px);
+  }
+  75% {
+    transform: translate(40px, -20px);
   }
 }
 
@@ -314,6 +412,8 @@ body.dark-theme .theme-toggle .moon {
 
 .hero-section {
   padding: 5.5rem 0 5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-inner {
@@ -321,6 +421,8 @@ body.dark-theme .theme-toggle .moon {
   grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
   align-items: center;
   gap: 3.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
@@ -593,6 +695,67 @@ body.dark-theme .theme-toggle .moon {
   color: var(--color-text-muted);
 }
 
+/* Gallery Section Styles */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.75);
+  background: var(--color-bg-elevated);
+}
+
+.gallery-item-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-med);
+}
+
+.gallery-item-wrapper:hover img {
+  transform: scale(1.12);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-med);
+}
+
+.gallery-item-wrapper:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -617,10 +780,42 @@ body.dark-theme .theme-toggle .moon {
 }
 
 .project-title {
-  margin: 0 0 0.35rem;
+  margin: 0;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.35rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--color-accent);
+  transition: all var(--transition-med);
+  flex-shrink: 0;
+}
+
+.github-link:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.github-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .project-tagline {
