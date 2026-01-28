@@ -31,6 +31,7 @@
             <li><a href="#hero" class="nav-link active">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#hobbies-gallery" class="nav-link">Gallery</a></li>
             <li><a href="#gallery" class="nav-link">Projects</a></li>
             <li><a href="#internships" class="nav-link">Internships</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -50,6 +51,13 @@
     <main>
       <!-- Hero Section -->
       <section id="hero" class="section hero-section">
+        <div class="bubble-background">
+          <div class="bubble bubble-1"></div>
+          <div class="bubble bubble-2"></div>
+          <div class="bubble bubble-3"></div>
+          <div class="bubble bubble-4"></div>
+          <div class="bubble bubble-5"></div>
+        </div>
         <div class="container hero-inner">
           <div class="hero-content">
             <p class="hero-kicker">Hello, I'm</p>
@@ -179,6 +187,90 @@
         </div>
       </section>
 
+      <!-- Gallery Section -->
+      <section id="hobbies-gallery" class="section gallery-section">
+        <div class="container">
+          <header class="section-header">
+            <h2>Inspirations & Hobbies</h2>
+            <p>A glimpse into what inspires my work and passions.</p>
+          </header>
+          <div class="gallery-grid">
+            <div class="gallery-item" data-animate>
+              <div class="gallery-item-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=500&fit=crop" 
+                  alt="Coding and programming"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span class="gallery-label">Coding</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" data-animate>
+              <div class="gallery-item-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop" 
+                  alt="Web development and design"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span class="gallery-label">Web Dev</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" data-animate>
+              <div class="gallery-item-wrapper">
+                <img 
+                  src="https://picsum.photos/seed/aiml/500" 
+                  alt="Artificial intelligence and machine learning"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span class="gallery-label">AI & ML</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" data-animate>
+              <div class="gallery-item-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500&fit=crop" 
+                  alt="Data science and analytics"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span class="gallery-label">Data Science</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" data-animate>
+              <div class="gallery-item-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=500&fit=crop" 
+                  alt="Cybersecurity and data protection"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span class="gallery-label">Security</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" data-animate>
+              <div class="gallery-item-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop" 
+                  alt="Photography and nature"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span class="gallery-label">Photography</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Projects Section -->
       <section id="gallery" class="section gallery-section">
         <div class="container">
@@ -188,7 +280,14 @@
           </header>
           <div class="projects-grid">
             <article class="project-card" data-animate>
-              <h3 class="project-title">Placement Pulse</h3>
+              <div class="project-header">
+                <h3 class="project-title">Placement Pulse</h3>
+                <a href="https://github.com/ramapuramvarshareddy/pp-frontend" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View on GitHub">
+                  <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
               <p class="project-tagline">
                 Full-stack platform for real interview experience sharing.
               </p>
@@ -208,7 +307,14 @@
             </article>
 
             <article class="project-card" data-animate>
-              <h3 class="project-title">Print Board</h3>
+              <div class="project-header">
+                <h3 class="project-title">Print Board</h3>
+                <a href="https://github.com/ramapuramvarshareddy/PrintBoard-by-AI" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="View on GitHub">
+                  <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
               <p class="project-tagline">
                 AI-powered virtual keyboard controlled using hand gestures.
               </p>
@@ -346,6 +452,4 @@
     <script src="script.js" defer></script>
   </body>
 </html>
-
-
 
