@@ -1,10 +1,10 @@
 # Portfolio
-🌐 #Interactive Portfolio Website
+🌐 **Interactive Portfolio Website**
 
 A simple, interactive single-page portfolio built using HTML, CSS, and JavaScript.
 Includes smooth animations, an image gallery, and a dark/light theme toggle.
 
-✨ Features
+✨ **Features**
 📌 Sticky header with active navigation
 🎯 Animated hero section with CTA buttons
 🛠️ Skills cards with clean UI
@@ -13,13 +13,13 @@ Includes smooth animations, an image gallery, and a dark/light theme toggle.
 🌗 Dark / Light theme toggle (saved in localStorage)
 📱 Fully responsive design
 
-📁 Project Structure
+📁 **Project Structure**
 index.html   - Main layout
 styles.css   - Styling & animations
 script.js   - Interactions & logic
 assets/     - Images, favicon, resume
 
-🎨 Customization
+🎨 **Customization**
 Edit content in index.html
 Update colors & fonts in styles.css
 Replace images inside assets/
