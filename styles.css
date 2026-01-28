@@ -1014,4 +1014,42 @@ body.dark-theme .theme-toggle .moon {
     align-items: flex-start;
   }
 }
+/* ===== Aesthetic Background Floating Particles ===== */
+.bg-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-particles span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, rgba(56,189,248,0.8), transparent);
+  border-radius: 50%;
+  animation: floatParticle 25s linear infinite;
+  opacity: 0.35;
+}
+
+/* random sizes & timing */
+.bg-particles span:nth-child(1) { left: 10%; animation-duration: 18s; }
+.bg-particles span:nth-child(2) { left: 25%; animation-duration: 22s; width: 6px; height: 6px; }
+.bg-particles span:nth-child(3) { left: 40%; animation-duration: 26s; }
+.bg-particles span:nth-child(4) { left: 55%; animation-duration: 20s; width: 8px; height: 8px; }
+.bg-particles span:nth-child(5) { left: 70%; animation-duration: 28s; }
+.bg-particles span:nth-child(6) { left: 82%; animation-duration: 24s; width: 5px; height: 5px; }
+.bg-particles span:nth-child(7) { left: 92%; animation-duration: 30s; }
+.bg-particles span:nth-child(8) { left: 15%; animation-duration: 34s; }
+
+@keyframes floatParticle {
+  from {
+    transform: translateY(110vh) scale(0.8);
+  }
+  to {
+    transform: translateY(-20vh) scale(1.2);
+  }
+}
+
 
